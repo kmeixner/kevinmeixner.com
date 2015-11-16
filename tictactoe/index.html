@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="windows-1252">
+  <title>Kevin Meixner Demo JavaScript Application - Tic Tac Toe</title>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <link rel="stylesheet" href="css/custom.css" />  
+  <script>
+  
+    /*** GLOBALS ***/  
+  
+    var BLN_DEBUGMODEON = true; // when true output errors to alert(), when false silently fail
+	var OBJ_GAMEBOARD = null;
+
+    /*** FUNCTIONS ***/	
+  
+    /**
+	 * Creates a data object representing the game board. It contains 
+	 * an array of object representing the cells and also game state 
+	 * information.
+	 *
+	 * @returns objGameBoard: the gameboard
+	 */
+    function createNewBoard(){
+	
+	  var objGameBoard = new Object();
+	  var arrCells = new Array();
+	  
+	  objGameBoard.currentplayer = "X";
+	  objGameBoard.numcellsfilled = 0;
+	  objGameBoard.gameover = false;
+
+	  for (var i=1; i<10; i++){
+	    var strCurrentCellName = 'cell'+i;
+		var objCurrentCell = createGameCell(strCurrentCellName);
+		arrCells.push(objCurrentCell);
+	  }
+	  
+	  objGameBoard.cells = arrCells;
+	  
+	  objGameBoard.toggleCell = function (iCellNum){
+	  
+	    if (iCellNum < 0 || iCellNum > 8){
+		  handleError("objGameBoard.toggleCell(): ERROR: iCellNum must be between 0 and 8 but received: "+iCellNum);
+		}
+		else {
+		
+		  if (this.currentplayer == "X"){
+		    objGameBoard.cells[iCellNum].value = "X";
+			this.currentplayer = "O";
+		  }
+		  else { // this.iCurrentPlayer == 2
+		    objGameBoard.cells[iCellNum].value = "O";
+			this.currentplayer = "X";
+		  }
+		  
+		}
+		
+	  }
+	  
+	  objGameBoard.checkForWin = function (iCellNum, cVal){
+		
+	    switch (Number(iCellNum)){
+		
+		  case 0: // TOP LEFT
+		  
+		    if (this.topRowCompleted() 
+			    || this.leftColCompleted()
+				|| this.leftToRightDiagCompleted()
+			   )
+			{
+			  return true;
+			}
+		  
+		    break;
+			
+		  case 1: // TOP CENTER
+		  
+		    if (this.topRowCompleted() 
+			    || this.middleColCompleted()
+			   )
+			{
+			  return true;
+			}		  
+		  
+		    break;			
+			
+		  case 2: // TOP RIGHT
+		  
+		    if (this.topRowCompleted() 
+			    || this.rightColCompleted()
+				|| this.rightToLeftDiagCompleted()
+			   )
+			{
+			  return true;
+			}		  
+		  
+		    break;			
+			
+		  case 3: // MIDDLE LEFT
+		  
+		    if (this.middleRowCompleted() 
+			    || this.leftColCompleted()
+			   )
+			{
+			  return true;
+			}		  
+		  
+		    break;			
+			
+		  case 4: // CENTER
+		  
+		    if (this.middleRowCompleted() 
+			    || this.middleColCompleted()
+				|| this.leftToRightDiagCompleted()
+				|| this.rightToLeftDiagCompleted()
+			   )
+			{
+			  return true;
+			}			  
+		  
+		    break;			
+			
+		  case 5: // MIDDLE RIGHT
+		  
+		    if (this.middleRowCompleted() 
+			    || this.rightColCompleted()
+			   )
+			{
+			  return true;
+			}			  
+		  
+		    break;			
+			
+		  case 6: // BOTTOM LEFT
+		  
+		    if (this.bottomRowCompleted() 
+			    || this.leftColCompleted()
+				|| this.rightToLeftDiagCompleted()
+			   )
+			{
+			  return true;
+			}		  
+		  
+		    break;			
+			
+		  case 7: // BOTTOM CENTER
+		  
+		    if (this.bottomRowCompleted() 
+			    || this.middleColCompleted()
+			   )
+			{
+			  return true;
+			}			  
+		  
+		    break;			
+			
+		  case 8: // BOTTOM RIGHT
+		  
+		    if (this.bottomRowCompleted() 
+			    || this.rightColCompleted()
+				|| this.leftToRightDiagCompleted()
+			   )
+			{
+			  return true;
+			}			  
+		  
+		    break;	
+			
+		}
+
+	  }
+	  
+	  /*
+	  Note: Cell numbering:
+		
+	  0 1 2
+	  3 4 5 
+	  6 7 8
+	  */	  
+	  
+	  objGameBoard.topRowCompleted = function (){
+	    return (this.cells[0].value == this.cells[1].value && this.cells[1].value == this.cells[2].value);
+	  }
+	  
+	  objGameBoard.middleRowCompleted = function (){
+	    return (this.cells[3].value == this.cells[4].value && this.cells[4].value == this.cells[5].value);
+	  }	 
+
+	  objGameBoard.bottomRowCompleted = function (){
+	    return (this.cells[6].value == this.cells[7].value && this.cells[7].value == this.cells[8].value);
+	  }	
+
+	  objGameBoard.leftColCompleted = function (){
+	    return (this.cells[0].value == this.cells[3].value && this.cells[3].value == this.cells[6].value);
+	  }	  
+	  
+	  objGameBoard.middleColCompleted = function (){
+	    return (this.cells[1].value == this.cells[4].value && this.cells[4].value == this.cells[7].value);
+	  }	 
+
+	  objGameBoard.rightColCompleted = function (){
+	    return (this.cells[2].value == this.cells[5].value && this.cells[5].value == this.cells[8].value);
+	  }	 
+
+	  objGameBoard.leftToRightDiagCompleted = function (){
+	    return (this.cells[0].value == this.cells[4].value && this.cells[4].value == this.cells[8].value);
+	  }	 
+
+	  objGameBoard.rightToLeftDiagCompleted = function (){
+	    return (this.cells[2].value == this.cells[4].value && this.cells[4].value == this.cells[6].value);
+	  }	  		  
+	  
+	  return objGameBoard;
+	}
+	
+	/**
+	 * Creates an object represeting an individual 
+	 * data cell.
+	 *
+	 * @param string: strCellName
+	 *
+	 * @returns objGameCell: the cell's data object
+	 */
+	function createGameCell(strCellName){
+	
+	  var objGameCell = new Object();
+	  objGameCell.value = " "; // " " | "X" | "O" are valid values
+	  
+	  if (strCellName != null){
+        objGameCell.name = strCellName;
+	  }
+	  else {
+	    objGameCell.name = "noname";
+	  }
+	  
+	  return objGameCell;
+	}
+	
+    /**
+	 * If the blnDebugModeOn variable is true, outputs errors to alert(), 
+	 * otherwise does nothing.
+	 *
+	 * @param string: strMessage
+	 * 
+	 * @returns: nothing
+	 */
+    function handleError(strMessage){
+	
+	  if (BLN_DEBUGMODEON)
+	    alert(strMessage);
+		
+	  return;
+	}
+	
+	/**
+	 * This will respond to a tic tac toe cell image click and 
+	 * will update the image and update the message at the bottom 
+	 * appropriately.
+	 *
+	 * @param img imgClick: the HTML img that was clicked
+	 */
+	function handleCellClick(imgClicked){
+	
+	  var strCellName = imgClicked.id;
+	  var iCellNum = Number(strCellName.substring(4))-1;
+	  var objGameboard = OBJ_GAMEBOARD;
+	  
+	  if (objGameboard.gameover)
+	    return;
+	  
+	  if (objGameboard.cells[iCellNum].value == " "){
+	  
+	    objGameboard.numcellsfilled++;
+	  
+		var iCurrentPlayer = objGameboard.currentplayer;
+	    objGameboard.toggleCell(iCellNum); // toggles current player too
+		var iNextPlayer = objGameboard.currentplayer;
+		
+		var cMarker = objGameboard.cells[iCellNum].value;
+		
+		// update image:
+		
+		imgClicked.src = 'img/'+cMarker.toLowerCase()+'.gif';
+		imgClicked.alt = cMarker;
+		
+		// check for win:
+		
+		var blnWin = objGameboard.checkForWin(iCellNum, iCurrentPlayer);
+		
+		if (blnWin){
+		  var strMessage = 'Player '+iCurrentPlayer+' wins!';
+		  objGameboard.gameover = true;
+		}
+		else {
+		
+		  if (objGameboard.numcellsfilled < 9){
+		    var strMessage = 'Player '+iNextPlayer+' please click a square.';
+		  }
+		  else {
+		    var strMessage = 'No one wins.';
+		  }
+		}
+		
+		var objMessageDiv = document.getElementById('message');
+		objMessageDiv.innerHTML = strMessage;
+	  }
+
+	  // Note: if the square already has a value then this function has no 
+	  //       affect
+	  
+	  return;
+	}	
+	
+	/*** MAIN ***/
+  
+    $(function(){ // executed upon document.onready(), when page loads
+
+	  var objGameBoard = createNewBoard();
+	  OBJ_GAMEBOARD = objGameBoard;
+	  
+    });   
+
+  </script>
+  
+</head>
+<body>
+
+  <h1>Tic Tac Toe</h1>
+
+  <!-- 
+  KM NOTE: Using HTML table instead of CSS for simplicity and because a 
+  tic-tac-toe board will always be a 9X9 grid so the grid layout (aside from
+  dimensions) will never need to be altered if the CSS skin changes
+  -->
+  
+  <table>
+    <tr>
+	  <td class="cell"><img id="cell1" src="img/blank.gif" alt="blank" onclick="handleCellClick(this)" /></td>
+	  <td class="cell verticallines"><img id="cell2" src="img/blank.gif" alt="blank" onclick="handleCellClick(this)" /></td>
+	  <td class="cell"><img id="cell3" src="img/blank.gif" alt="blank" onclick="handleCellClick(this)" /></td>	  
+	</tr>
+    <tr>
+	  <td class="cell horizontallines"><img id="cell4" src="img/blank.gif" alt="blank" onclick="handleCellClick(this)" /></td>
+	  <td class="cell horizontallines verticallines"><img id="cell5" src="img/blank.gif" alt="blank" onclick="handleCellClick(this)" /></td>
+	  <td class="cell horizontallines"><img id="cell6" src="img/blank.gif" alt="blank" onclick="handleCellClick(this)" /></td>	  
+	</tr>
+	<tr>
+	  <td class="cell"><img id="cell7" src="img/blank.gif" alt="blank" onclick="handleCellClick(this)" /></td>
+	  <td class="cell verticallines"><img id="cell8" src="img/blank.gif" alt="blank" onclick="handleCellClick(this)" /></td>
+	  <td class="cell"><img id="cell9" src="img/blank.gif" alt="blank" onclick="handleCellClick(this)" /></td>
+	</tr>
+  </table>
+  
+  <div id="message">Player X please click a square.</div>
+
+</body>
+</html>
+
+
