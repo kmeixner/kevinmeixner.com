@@ -1,63 +1,44 @@
 Kevin Meixner, Lead Software Developer
+Tel: 647-770-7733
 http://ca.linkedin.com/in/kevinmeixner
-http://www.kevinmeixner.com/contact.php
 
-PROFESSIONAL PROFILE
-
-- Excellent Project Management Skills
-- Experienced at gathering user requirements and translating into product scope and project scope
-- Experienced at prioritizing and handling multiple tasks at a time
-- Excellent analytical, problem solving and troubleshooting skills
-- Experienced at using critical thinking and judgment
-- Experienced at programming integrated Web, database and software systems
-- Experienced at producing technical documentation and user manuals
-- Experienced at providing technical support and training 
-- Versatile and swiftly adaptive to new situations and rapidly changing work environments
-- Experienced at working with minimal supervision
-- Experienced at working in a team
-- Excellent verbal and written English communication skills
-- Positive attitude and good interpersonal skills
 
 TECHNICAL PROFILE
 
-Programming Languages:
-
-PHP, Zend Framework, JavaScript, JQuery, AJAX, Java, C++/C/C#, Visual Basic (VB), ASP, JSP, Visual Studio
-
-Web:
-
-HTML5,  CSS3, XML, JSON, REST, AS2/AS3, Flash, SMIL, OpenLaszlo, Firefox, Chrome, IE, Opera, Safari
-
-Databases:
-
-MySQL, PostgreSQL, SQL (T-SQL/PL-SQL),  MS Access, Crystal Reports,  Oracle
-
-Graphics:
-
-Photoshop, GIMP, ImageMagick
-
-Software Development Tools: 
-
-Git, CVS, RCS, Bugzilla, Jira, FTP, Putty, Visio
-
-Web Design Tools:
-
-Dreamweaver, FrontPage
-
-Windows 7/XP/Vista, Linux/UNIX/QNX, Macintosh, iPad, Windows NT/2K/2003 Server
-
-Operating Systems
-
-Clerical:
-
-PeopleSoft, Word, WordPerfect, Excel, Project, PowerPoint, MS Office, OpenOffice,  Typing 100 wpm, driver's license
+Programming Languages: PHP, JavaScript, JQuery, AJAX, Java, C++/C/C#, Python, Ruby, Visual Basic (VB), ASP, JSP
+Web: HTML5,  CSS3, XML, JSON, REST, Firefox, Chrome, IE, Opera, Safari
+Databases: MySQL, PostgreSQL, SQL (T-SQL/PL-SQL), MS Access, Crystal Reports, Oracle
+Graphics: Photoshop, GIMP, ImageMagick
+Software Development Tools: Git, BitBucket, Jira, Bugzilla, FTP, Putty, Docker, Visio
+Web Design Tools: Dreamweaver, FrontPage
+Operating Systems: Windows 8/7/XP/Vista, Linux/UNIX/QNX, Macintosh, iPad, Windows NT/2K/2003 Server, Android
+Clerical: Word, WordPerfect, Excel, Project, PowerPoint, MS Office,  Trello, Waffle, Wrike, Typing
 
 PROFESSIONAL EXPERIENCE
 
-2006-Present: Lead Software Developer, Sarolta Technologies Inc.
+2013-Present: Software Development Engineer: Slyce.it (formerly Hovr.it)
 
-- Reported directly to President and produced SaaS (Software as a Service) online software
+
+- Reported directly to CEO at successful “Lean Start-up” Hovr.it which was later acquired by Slyce.it; after acquisition, reported to Chief Product Officer and VP of Product
+- Participated in weekly agile sprint planning, weekly sprint review and daily SCRUM stand-up meetings
+- Wrote software to automatically pull large product catalog data from fortune 500 retailers and normalize the format
+- Wrote software to allow swift classification of product images by data specialists to prepare them for image recognition processing
+- setup data for demos to potential new clients and assisted in client on-boarding
+- Incorporated analytics tracking into software application to understand how users were using the product to gauge opportunities for improvements
+- used skills in PHP, SQL, JavaScript, JQuery, JSON, AJAX, REST, XML, HTML5 and CSS3
+- Assisted in database design and optimization
+- Assisted in development of micro-service based architecture
+- Developed software services to run on Amazon (AWS) cloud
+- Modularized software into minimalistic Docker containers
+- Assisted in development and improvement of plug-ins for popular web browsers
+
+2006-2013: Lead Software Developer: Sarolta Technologies Inc.
+
+
+
+- Reported directly to President and produced SaaS (Software as a Service) online video editing software
 - Translated feature wish list into product scope, project scope and development iterations
+- applied computer image processing techniques to video frames to apply special effects to video
 - performed unit testing and integration testing for QA 
 - Used skills in PHP, SQL, JavaScript, JQuery Mobile, HTML5, CSS3, Flash, SMIL and OpenLaszlo
 - Developed APIs using REST, SOAP, AJAX, XML and JSON
@@ -70,11 +51,10 @@ PROFESSIONAL EXPERIENCE
 - Integrated application with PayPal and iTransact payment gateway systems
 - Integrated application with Facebook, Twitter and YouTube
 - Learned to work with new technologies on the job
-- Used software version control system (GIT, CVS) concurrently with other developers
-- Tracked bugs and hours spent on different projects using Bugzilla
 - Assisted in the preparation of applications for government research and development grants (SR&ED)
 
-2004-2005: IT Coordinator / Programmer Analyst / Database Admin (12 month contract), Mancor Industries	
+2004-2005: IT Coordinator (1 year contract), Mancor Industries
+	
 
 - Reported directly to Plant Manager
 - Maintained, improved and expanded internal Visual Basic applications
@@ -89,14 +69,14 @@ PROFESSIONAL EXPERIENCE
 - Created template prototypes for professional web sites
 - Provided technical support and training to web site owners
 - Monitored overseas outsourcing of the development of small-scale web sites (10-30 page sites)
-- Made warm-calls to people interested in search engine optimization and web site creation
+- Made warm-calls to people interested in search engine optimization and website creation
 - Learned Search Engine Optimization (SEO) Techniques
 - Tracked progress of sponsored Google Ad-words Campaigns
 
 2002-2004+: Web Programmer / IT Consultant: KMIT (Kevin Meixner Information Technology) Solutions
 
 - Networked to find various short-term full-time and part-time contracts in web design and IT
-- Extended online reporting pages of Royal LePage Broker using skills in PHP, SQL, PHP and MySQL
+- Extended online reporting pages of Royal LePage Broker using skills in PHP, SQL and MySQL
 - Assisted OpenInfo Corporation in the development of a front-end Java application created for York Region Municipal Government to communicate with a GIS server (4 month full-time contract)
 - Designed websites for Linea Salon and Slender Concept Spa, extended and maintained the website of Life and Wellness Coach Marlene George using skills in HTML, CSS, JavaScript, Adobe Photoshop and graphic design
 - Provided basic training to use MS Office applications to clients
@@ -106,26 +86,29 @@ PROFESSIONAL EXPERIENCE
 2003: Web Software Developer (6 month contract): City of Hamilton Municipal Government
 
 - Maintained and updated municipal government Internet and Intranet sites and related databases
-- Used skills in XHTML, CSS, JavaScript, XML, SQL,  ASP and VBScript
+- Used skills in XHTML, CSS, JavaScript, XML, SQL, ASP and VBScript
 - Maintained and extended SQL Server and MS Access databases
 - Maintained and extended PeopleSoft application
 - Developed dynamic online surveys linked to databases
 - Integrated GIS mapping software into website
-- Provided training to employees via group lectures and written technical documentation
+- Provided training to employees via group lectures, written technical documentation and user manuals
+
 
 2000-2002: Software Developer, CriSys Limited
 
+
+
 - Developed GUIs, databases and hardware interfaces for mission-critical 911 call centre dispatch software
 - Used skills in C\C++ and QNX
-- Created thorough and easy to understand technical documentation
+- Created thorough and easy to understand technical documentation and user manuals
 
 EDUCATION
 
-Degree:	Bachelor of Computer Science (B.Cs)	
+Degree:	Bachelor of Computer Science (B.Cs)
 School: University of Windsor   		
-Major: Computer Science				
-Minor: Electrical Engineering
+Major:  Computer Science
+Minor:  Electrical Engineering
 
 HOBBIES
 
-Computers, Internet, Music, Karaoke, Cooking, Comedy Clubs, Health and Wellness, Yoga, Swimming
+Computers, Internet, Yoga, Meditation, Music, Rock Choir, Live Band Karaoke, Improv Dancing, Volunteer Work
