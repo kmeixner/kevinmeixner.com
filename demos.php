@@ -22,7 +22,7 @@
 	</p>
 	
 	<p>
-	<a href="cardgame?action=new" target="_blank" rel="external" data-ajax="false">Memory Card Game</a>
+	<a href="cardgame?action=new" target="_blank" rel="external" data-ajax="false">Memory Card Game</a> (PHP)
 	</p>
 	
 	<p>
@@ -32,12 +32,29 @@
 	</p>
 	
 	</li>
+  
+	<li>
+	<h3>Tic Tac Toe</h3>
+	
+	<p>
+	This is a JavaScript Tic Tac Toe game that I was once asked to write to demonstrate my JavaScript skills:
+	</p>
+	
+	<p>
+	<a href="/tictactoe/index.html" target="_blank" rel="external" data-ajax="false">Tic Tac Toe</a> (JavaScript)
+	</p>
+	
+	<p>
+	This is mostly a pure JavaScript application except it uses a single JQuery call after the document has finished loading to initialize the board object.
+  </p>
+	
+	</li>  
 	
 	<li>
 	
-	<a href="http://www.sarolta.tv/site/sarolta_joomlaiframe/sarolta_joomlaiframe_editor.php?cuid=0&advanced=1" target="_blank" rel="external">
-	Online Video Editor by Sarolta Technologies Inc.
-	</a>
+	<!--a href="http://www.sarolta.tv/site/sarolta_joomlaiframe/sarolta_joomlaiframe_editor.php?cuid=0&advanced=1" target="_blank" rel="external"-->
+	Online Video Editor by Sarolta Technologies Inc. (<b>Sorry, online demo is no longer available</b>)
+	<!--/a-->
 	
 	<p>
 	Please give this application a couple of minutes to load.
