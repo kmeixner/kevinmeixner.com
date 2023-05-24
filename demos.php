@@ -31,6 +31,10 @@
 	purposes for an improved user experience on modern web devices but the game does not rely on the JQuery library or JavaScript for its functionality.
 	</p>
 	
+	<p>
+	<a href="https://github.com/kmeixner/kevinmeixner.com/tree/master/cardgame" target="_blank" rel="external" data-ajax="false">Source code</a>
+	</p>
+	
 	</li>
   
 	<li>
@@ -46,7 +50,12 @@
 	
 	<p>
 	This is mostly a pure JavaScript application except it uses a single JQuery call after the document has finished loading to initialize the board object.
-  </p>
+    </p>
+	
+	
+	<p>
+	<a href="https://github.com/kmeixner/kevinmeixner.com/tree/master/tictactoe" target="_blank" rel="external" data-ajax="false">Source code</a>
+	</p>	
 	
 	</li>  
 	
