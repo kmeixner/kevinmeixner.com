@@ -14,29 +14,33 @@
 	
 	<form method="post" action="sendemail.php" data-ajax="false">
 	
-    <div id="subject" data-role="fieldcontain">
+    <div id="subjectDiv" data-role="fieldcontain">
       <fieldset data-role="controlgroup">
-        <label for="subject">
-		  Subject
-        </label>
-        <input name="subject" id="subject" placeholder="" value="" type="text" />
+        <input name="subject" id="subject" placeholder="Subject" value="Re: Contacting You From kevinmeixner.com Email Form" type="text" />
       </fieldset>
     </div>
 		
-    <div id="message" data-role="fieldcontain">
+    <div id="messageDiv" data-role="fieldcontain">
       <fieldset data-role="controlgroup">
-        <label for="message">
-          Message
-        </label>
-        <textarea name="message" id="message" placeholder=""></textarea>
+        <textarea name="message" id="message" placeholder="Message"></textarea>
+      </fieldset>
+    </div>
+	
+    <input id="submit" value="Send" type="submit" data-inline="true" data-icon="arrow-r" data-iconpos="right" />	
+	
+    <div id="field3Div" data-role="fieldcontain">
+      <fieldset data-role="controlgroup">
+        <input name="field3" id="field3" placeholder="Leave blank to prove your human" value="" type="text" />
       </fieldset>
     </div>
 		
-    <input id="submit" value="Send" type="submit" data-inline="true" data-icon="arrow-r" data-iconpos="right" />
-
   </div><!-- /content -->
 
   <?php include('footer.inc.php'); ?>
+  
+  <script>
+	document.getElementById('field3Div').style['visibility'] = 'hidden';
+  </script>
 
 </div><!-- /page -->
 

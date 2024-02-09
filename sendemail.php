@@ -10,8 +10,8 @@
 
   <div data-role="content" id="home">
 
-  <?php  
-   
+  <?php
+  
     // Sends email:
   
     $to = "kmit@rogers.com";
@@ -20,7 +20,11 @@
     $from = "emailform@kevinmeixner.com";
     $headers = "From:" . $from;	
 	
-	if ($subject == NULL && $message == NULL){
+	if (strlen($_REQUEST['field3'])) {
+		// robot detected, send fake success message but do not actually send email
+	    echo 'The email was sent successfully.';
+	}	
+	else if ($subject == NULL && $message == NULL){
 	  echo 'ERROR: Both the subject and the message were blank.';
 	}
 	else {
